@@ -15,13 +15,13 @@
   limitations under the License.
 -->
 <project xmlns="http://maven.apache.org/POM/4.0.0" xmlns:xsi="http://www.w3.org/2001/XMLSchema-instance"
-	xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
+		xsi:schemaLocation="http://maven.apache.org/POM/4.0.0 http://maven.apache.org/xsd/maven-4.0.0.xsd">
 	<modelVersion>4.0.0</modelVersion>
 	<groupId>com.stackify</groupId>
 	<artifactId>apache-config</artifactId>
 	<version>1.0.0-SNAPSHOT</version>
 	<packaging>jar</packaging>
-	
+
 	<name>Apache config parser</name>
 	<description>A simple parser for Apache httpd config files</description>
 	<url>https://github.com/stackify/apache-config</url>
@@ -31,31 +31,31 @@
 		<artifactId>oss-parent</artifactId>
 		<version>7</version>
 	</parent>
-		
+
 	<licenses>
 		<license>
 			<name>The Apache Software License, Version 2.0</name>
 			<url>http://www.apache.org/licenses/LICENSE-2.0.txt</url>
 		</license>
 	</licenses>
-	
+
 	<scm>
 		<connection>scm:git:git://github.com/stackify/apache-config.git</connection>
 		<developerConnection>scm:git:git@github.com:stackify/apache-config.git</developerConnection>
 		<url>https://github.com/stackify/apache-config</url>
 	</scm>
-	
+
 	<organization>
 		<name>Stackify, LLC</name>
 		<url>http://www.stackify.com</url>
 	</organization>
-	
+
 	<properties>
 		<project.build.sourceEncoding>UTF-8</project.build.sourceEncoding>
 		<java.version>1.6</java.version>
 	</properties>
 
-	<dependencies>		
+	<dependencies>
 
 		<!-- test dependencies -->
 		<dependency>
@@ -76,6 +76,19 @@
 					<source>${java.version}</source>
 					<target>${java.version}</target>
 				</configuration>
+			</plugin>
+			<plugin>
+				<groupId>org.apache.maven.plugins</groupId>
+				<artifactId>maven-gpg-plugin</artifactId>
+				<executions>
+					<execution>
+						<id>sign-artifacts</id>
+						<phase>verify</phase>
+						<goals>
+							<goal>sign</goal>
+						</goals>
+					</execution>
+				</executions>
 			</plugin>
 		</plugins>
 	</build>
